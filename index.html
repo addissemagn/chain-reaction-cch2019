@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ChainReact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--STYLESHEETS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <!--Font Awesome-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <!--Lato Font-->
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato'>
+    <!--Css-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/progress-bar.css">
+</head>
+
+<body>
+    <!--CALL USER-->
+    <script type="text/javascript">
+        document.write(unescape("%3Cscript src='" + "//panel.mightycall.com/c2c/js/MightyCallC2C_5.4.js' type='text/javascript'%3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src='" + "//mightycallstorage.blob.core.windows.net/c2cjss/0f276dce-b05e-4711-bffe-d13eb62b535a.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        InitClick2Call();
+    </script>
+
+    <!-- TOP NAVIGATION BAR -->
+    <div class="topnav">
+        <a class="logo" href="#home">ChainReact</a>
+        <div class="topnav-right">
+            <!-- TOGGLES -->
+            
+            <div class="user ">
+                <div class="everything">
+                    <h2 class="toggle">Nearby Emergencies</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- CLIENT PAGES -->
+    <div class='center client'>
+        <h2 class='larger-font'>Nearby Emergencies</h2>
+        <!--        <h2 class='smaller-font'>Know your rights</h2>-->
+        <!--STEP 2: SELECT ALERT -->
+        <div class='client-options'>
+            <div class='go-to'>
+                <span>Patient Type</span>
+                <span>Distance</span>
+            </div>
+            <div class='go-to'>
+                <span>Patient Type</span>
+                <span>Distance</span>
+            </div>
+            <div class='go-to'>
+                <span>Patient Type</span>
+                <span>Distance</span>
+            </div>
+            <div class='go-to'>
+                <span>Patient Type</span>
+                <span>Distance</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- PATIENT PAGES -->
+    <div class='center patient'>
+        <!--NUMBERS OF THE STEPS -->
+        <div class='progress'>
+            <div class='step one active'>1</div>
+            <div class='bar two'></div>
+            <div class='step two'>2</div>
+            <div class='bar three'></div>
+            <div class='step three'>3</div>
+        </div>
+
+
+        <!--STEP 1: SELECT ALERT TYPE -->
+        <div class='alarm'>
+            <!--
+            <div class='information'>
+                <span>Your information:</span>
+                <span>Insert here.</span>
+                <span>You are at:</span>
+                <span id="location1"></span>
+            </div>
+-->
+            <div class='send-alert'>
+                <i class='fa fa-bell'></i>
+                <span>
+                    Send an alert
+                </span>
+            </div>
+        </div>
+
+        <!--STEP 2: SELECT ALERT -->
+        <div class='type'>
+            <button class='update-info'>
+                Update
+            </button>
+            
+            <div class='select'>
+                <span>Emergency Type</span>
+                <span>Everyone</span>
+            </div>
+            <div class='select'>
+                <span>Emergency Type</span>
+                <span>Everyone</span>
+            </div>
+            <div class='select'>
+                <span>Emergency Type</span>
+                <span>Everyone</span>
+            </div>
+            <div class='select'>
+                <span>Emergency Type</span>
+                <span>Everyone</span>
+            </div>
+        </div>
+
+        <!--STEP 3: CONFIRM AND SEND -->
+        <div class='confirm'>
+            <div class='message'>
+                <strong>Emergency Alert</strong>
+                
+                <span>There is an Emergency Type
+                at <p id="location"></p>. Some sort of prompt to the helper.</span>
+            </div>
+
+            <div class='text'>
+                You are about to broadcast this
+                emergency
+                <span class='tname'>Emergency Type</span>
+                to
+                <span class='twhere'>Everyone</span>
+            </div>
+            <div class='text'>
+                Are you sure?
+            </div>
+            <button class='yes' onclick="notifyMe()">
+                Yes, broadcast now
+            </button>
+            <button class='no'>
+                No, go back
+            </button>
+        </div>
+    </div>
+    
+    <!--SCRIPTS -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="js/index.js"></script>
+</body></html>

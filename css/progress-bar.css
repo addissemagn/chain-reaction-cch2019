@@ -1,0 +1,68 @@
+.progress {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.progress .step {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #eee;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color: #555;
+    margin-left: -5px;
+    z-index: 3;
+    transition: .2s all ease-in-out;
+}
+
+.progress .step.active {
+    background: #e83622;
+    color: #FFF;
+}
+
+.progress .step.one:after,
+.progress .step.two:after,
+.progress .step.three:after {
+    content: "Specify Emergency";
+    display: block;
+    position: absolute;
+    bottom: -35px;
+    left: -20px;
+    font-size: .65em;
+    line-height: 15px;
+    color: #555;
+    width: 70px;
+}
+
+.progress .step.two:after {
+    content: "Confirm & Send Alert";
+}
+
+.progress .step.three:after {
+    content: "Update Information";
+}
+
+.progress .step.one.active:after,
+.progress .step.two.active:after,
+.progress .step.three.active:after {
+    color: #e83622;
+}
+
+.progress .bar {
+    display: inline-block;
+    width: 160px;
+    height: 10px;
+    background: #eee;
+    margin: 0 -2px;
+    transition: .2s all ease-in-out;
+}
+
+.progress .bar.active {
+    background: #e83622;
+    color: #FFF;
+}
