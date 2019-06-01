@@ -75,6 +75,8 @@ def RegisterPerson(person_id, cpr_cert=""):
 def VerifyPerson(person_id, cpr_cert):
     owner = Get(GetContext(), CPR_KEY + cpr_cert)
     is_owner = CheckWitness(owner)
+    if is_owner:
+        Notify("True")
     return is_owner
 
 def CertifyPerson(person_id, cpr_cert):
@@ -83,6 +85,7 @@ def CertifyPerson(person_id, cpr_cert):
         # Error: certificate already belongs to someone else
         return False
     else:
+        # Note: person_id has to be passed in as a byte_array with the public key of the ACCOUNT, not identity
         Put(GetContext(), CPR_KEY + cpr_cert, person_id)
         return True
 
