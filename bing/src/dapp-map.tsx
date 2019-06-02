@@ -53,11 +53,15 @@ export const DappMap: React.SFC<RouterProps> = (props) => {
           <div className="client-options">
               <div id="pat1" className="go-to patient1 btn1" onClick={maps}>
                   <span>Cardiac arrest | 500m | 0 min ago </span>
-                  <span>Accept</span>
+                  <span>Go to</span>
               </div>
               <div className="go-to btn2">
                 <h2 className="call" onClick={callPerson}>Call</h2>
               </div>
+              <iframe id="goog-map"
+              width="100%"
+              height="325px"
+              src={'https://www.google.com/maps/d/embed?mid=1KmjISOniMSeRjtw4AhrW2q-7jc6lTHrG&zoom=14&z=15'}></iframe>
           </div>
       </div>
     </div>
