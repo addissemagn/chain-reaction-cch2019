@@ -50,33 +50,44 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
   }
 
   function notifyMe() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-        const message = 'Sudden cardiac arrest at ' + lat + ', ' + lon + '.';
-
-        // Let's check if the browser supports notifications
-        if (!('Notification' in window)) {
-          alert('This browser does not support desktop notification');
-        } else if (Notification.permission === 'granted') {
-          // Let's check whether notification permissions have already been granted
-          // If it's okay let's create a notification
-          return new Notification(message);
-        } else if (Notification.permission !== 'denied') {
-          // Otherwise, we need to ask the user for permission
-          Notification.requestPermission().then((permission) => {
-            // If the user accepts, let's create a notification
-            if (permission === 'granted') {
-              return new Notification(message);
-            }
-          });
-        }
-      });
+    const prog = document.querySelectorAll('.three');
+    for (const e of prog) {
+      e.classList.toggle('active');
     }
+
+    const toggles = document.querySelectorAll('.confirm, .type');
+    for (const t of toggles) {
+      t.classList.toggle('hide');
+    }
+
+    setTimeout(sendNotif, 3000);
     // else {
     //  x.innerHTML = "Geolocation is not supported by this browser.";
     // }
+  }
+
+  function sendNotif() {
+    const loc = document.querySelector('#location');
+    let message = 'Sudden cardiac arrest';
+    if (loc !== null) {
+      message = 'Sudden cardiac arrest at ' + loc.innerHTML;
+    }
+    // Let's check if the browser supports notifications
+    if (!('Notification' in window)) {
+      alert('This browser does not support desktop notification');
+    } else if (Notification.permission === 'granted') {
+      // Let's check whether notification permissions have already been granted
+      // If it's okay let's create a notification
+      return new Notification(message);
+    } else if (Notification.permission !== 'denied') {
+      // Otherwise, we need to ask the user for permission
+      Notification.requestPermission().then((permission) => {
+        // If the user accepts, let's create a notification
+        if (permission === 'granted') {
+          return new Notification(message);
+        }
+      });
+    }
   }
 
   async function alertSent() {
@@ -111,15 +122,6 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
   }
 
   function confirmSent() {
-    const prog = document.querySelectorAll('.three');
-    for (const e of prog) {
-      e.classList.toggle('active');
-    }
-
-    const toggles = document.querySelectorAll('.confirm, .type');
-    for (const t of toggles) {
-      t.classList.toggle('hide');
-    }
     ScReportIncident({}).then(notifyMe);
     const map = document.getElementById('goog-map');
     if (map !== null) {
