@@ -93,7 +93,11 @@ export const DappInfo: React.SFC<RouterProps> = (props) => {
   }
 
   function toVerified() {
-    alert('This certificate is valid and belongs to the current ONT ID.');
+    const butt = document.querySelector('.add-info');
+    if (butt !== null) {
+      butt.classList.add('verified');
+      butt.innerHTML = 'Verified! ✓';
+    }
   }
 
   function toInfo() {

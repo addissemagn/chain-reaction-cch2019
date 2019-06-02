@@ -258,6 +258,12 @@ body {
     cursor: pointer;
 }
 
+.verified {
+    color: #FFF;
+    background: green;
+    transition: color 0.3s ease;
+    font-weight: 700;
+}
 .confirm button:first-of-type {
     margin-top: 30px;
 }
@@ -360,12 +366,6 @@ body {
 /* .credentials {
     display: inline;
 } */
-
-.credentials button {
-    /* float: right; */
-    /* width: 30px; */
-    width: 100px;
-}
 
 .mydetails strong {
     text-decoration: underline;
