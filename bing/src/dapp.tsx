@@ -1,7 +1,53 @@
+import { client, ParameterType } from 'ontology-dapi';
 import * as React from 'react';
 import { RouterProps } from 'react-router';
 
 export const Dapp: React.SFC<RouterProps> = (props) => {
+  const contactAddress: string = '63f6d026d137d7e65b9e34aeb9f3d38489ec8c56';
+  // const publicKey: string = '02d8c6864b40cafe07157e7f741fb6107003ad8025a6eb6ba67517d54a8baddc13';
+
+  async function ScReportIncident(values: any) {
+    const scriptHash: string = contactAddress; // contract address
+    const operation: string = 'ReportIncident'; // function name
+    const gasPrice: number = Number(500); // gas price
+    const gasLimit: number = Number(100000); // gas limit
+    const requireIdentity: boolean = false; // hard coded
+    const parametersRaw: any[] = [{ type: 'Long', value: 2.0 },
+                                  { type: 'Long', value: 2.0 },
+                                  { type: 'String', value: 'cpr' }]; // function paramers
+
+    const args = parametersRaw.map((raw) => ({ type: raw.type, value: convertValue(raw.value, raw.type) }));
+    try {
+      const result = await client.api.smartContract.invoke({
+        scriptHash,
+        operation,
+        args,
+        gasPrice,
+        gasLimit,
+        requireIdentity
+      });
+      // tslint:disable-next-line:no-console
+      console.log('onScCall finished, result:' + JSON.stringify(result));
+    } catch (e) {
+      alert('onScCall canceled');
+      // tslint:disable-next-line:no-console
+      console.log('onScCall error:', e);
+    }
+  }
+
+  function convertValue(value: string, type: ParameterType) {
+    switch (type) {
+      case 'Boolean':
+        return Boolean(value);
+      case 'Integer':
+        return Number(value);
+      case 'ByteArray':
+        return value;
+      case 'String':
+        return client.api.utils.strToHex(value);
+    }
+  }
+
   function notifyMe() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -66,6 +112,7 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
     for (const t of toggles) {
       t.classList.toggle('hide');
     }
+    ScReportIncident({});
     notifyMe();
   }
 
