@@ -147,7 +147,7 @@ body {
 .type {
     position: relative;
     width: 390px;
-    margin: 80px auto 0;
+    margin: 20px auto 0;
     font-size: 1.5em;
     cursor: pointer;
     -webkit-transition: opacity 300ms ease-in-out;

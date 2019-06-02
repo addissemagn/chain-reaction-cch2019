@@ -121,6 +121,13 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
       t.classList.toggle('hide');
     }
     ScReportIncident({}).then(notifyMe);
+    const map = document.getElementById('goog-map');
+    if (map !== null) {
+      const iframeMap = map as HTMLIFrameElement;
+      if (iframeMap.src !== null) {
+        iframeMap.src = iframeMap.src;
+      }
+    }
   }
 
   function confirmNotSent() {
@@ -143,12 +150,8 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
     }
   }
 
-  function updateInformation() {
-    // $('.select').on('click', function () {
-    //     $('.confirm').fadeOut('fast', function () {
-    //         $('.type').fadeIn('fast');
-    //     });
-    // });
+  function callEmergency() {
+    window.open('tel:9110');
   }
 
   function toMap() {
@@ -192,26 +195,14 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
         </div>
 
         <div className="type hide">
-            <button className="update-info" onClick={updateInformation}>
-                Update
-            </button>
+            <p className="standard-font">This is not a replacement for 911. Call emergency services below:</p>
+            <button className="update-info" onClick={callEmergency}>CALL NOW</button>
 
-            <div className="select">
-                <span>Emergency Type</span>
-                <span>Everyone</span>
-            </div>
-            <div className="select">
-                <span>Emergency Type</span>
-                <span>Everyone</span>
-            </div>
-            <div className="select">
-                <span>Emergency Type</span>
-                <span>Everyone</span>
-            </div>
-            <div className="select">
-                <span>Emergency Type</span>
-                <span>Everyone</span>
-            </div>
+            <p>In the meantime, look around you for a nearby AED:</p>
+            <iframe id="goog-map"
+              width="100%"
+              height="325px"
+              src={'https://www.google.com/maps/d/embed?mid=1KmjISOniMSeRjtw4AhrW2q-7jc6lTHrG&zoom=14&z=15'}></iframe>
         </div>
 
         <div className="confirm hide">
