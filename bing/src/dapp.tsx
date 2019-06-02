@@ -3,7 +3,7 @@ import * as React from 'react';
 import { RouterProps } from 'react-router';
 
 export const Dapp: React.SFC<RouterProps> = (props) => {
-  const contactAddress: string = '63f6d026d137d7e65b9e34aeb9f3d38489ec8c56';
+  const contactAddress: string = '624b6f434fef8b9ed6ffb57b0368c8f3061df675';
   // const publicKey: string = '02d8c6864b40cafe07157e7f741fb6107003ad8025a6eb6ba67517d54a8baddc13';
 
   async function ScReportIncident(values: any) {
@@ -12,8 +12,8 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
     const gasPrice: number = Number(500); // gas price
     const gasLimit: number = Number(100000); // gas limit
     const requireIdentity: boolean = false; // hard coded
-    const parametersRaw: any[] = [{ type: 'Long', value: 2.0 },
-                                  { type: 'Long', value: 2.0 },
+    const parametersRaw: any[] = [{ type: 'Integer', value: 2.0 },
+                                  { type: 'Integer', value: 2.0 },
                                   { type: 'String', value: 'cpr' }]; // function paramers
 
     const args = parametersRaw.map((raw) => ({ type: raw.type, value: convertValue(raw.value, raw.type) }));
@@ -26,6 +26,7 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
         gasLimit,
         requireIdentity
       });
+
       // tslint:disable-next-line:no-console
       console.log('onScCall finished, result:' + JSON.stringify(result));
     } catch (e) {
@@ -53,7 +54,7 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
       navigator.geolocation.getCurrentPosition((position) => {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
-        const message = 'Emergency Alert at ' + lat + ', ' + lon + '.';
+        const message = 'Sudden cardiac arrest at ' + lat + ', ' + lon + '.';
 
         // Let's check if the browser supports notifications
         if (!('Notification' in window)) {
@@ -204,17 +205,13 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
         <div className="confirm hide">
             <div className="message">
                 <strong>Emergency Alert</strong>
-
-                <span>There is an Emergency Type
-                at <p id="location"></p>. Some sort of prompt to the helper.</span>
+                <span>Sudden cardiac arrest at <p id="location"></p></span>
             </div>
 
             <div className="text">
                 You are about to broadcast this
-                emergency
-                <span className="tname">Emergency Type</span>
-                to
-                <span className="twhere">Everyone</span>
+                emergency to
+                <span className="twhere"> Everyone</span>
             </div>
             <div className="text">
                 Are you sure?
