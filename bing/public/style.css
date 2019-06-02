@@ -1,0 +1,291 @@
+/*COLOURS*/
+/*RED: #e83622*/
+/*BLACK: #222*/
+/*WHITE: #eee*/
+
+body {
+    position:
+    background: #FFF;
+    color: #e83622;
+    font-family: "Lato", sans-serif;
+    font-size: 11px;
+    transition: .2s background ease-in-out;
+}
+
+.standard-font {
+    color: #222;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.larger-font {
+    color: #222;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+
+.center {
+    background: #FFF;
+    padding: 50px;
+    border-top: 20px solid #e83622;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    width: 550px; /* needs to be same width as "alarm", etc. */
+}
+
+.hide {
+    display: none;
+}
+
+/*NAVIGATION BAR*/
+.topnav {
+    overflow: hidden;
+    background-color: #e83622;
+}
+
+.topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.topnav-right a:hover {
+/*    color: black;*/
+}
+
+.topnav-right h2:hover {
+/*    color: black;*/
+}
+
+.topnav a.logo {
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    padding: auto ;
+}
+
+.topnav-right {
+    float: right;
+    padding-top: 2px;
+    margin-right: 10px;
+}
+
+.user {
+    cursor: pointer;
+}
+
+.toggle {
+    color: white;
+}
+
+.alarm {
+    margin-top: 80px;
+    width: 550px;
+    color: #FFF;
+    display: inline-block;
+    text-align: center;
+    -webkit-transition: opacity 300ms ease-in-out;
+}
+
+/*make the square for the send alert*/
+.send-alert {
+    display: inline-block;
+
+    background: #eee;
+    color: #555;
+    width: 220px;
+    height: 220px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s all ease-in-out;
+}
+
+.alarm > .send-alert:active,
+.alarm > .send-alert:hover {
+    background: #e83622;
+    color: #FFF;
+}
+
+.alarm > .send-alert .fa {
+    width: 100%;
+    font-size: 80px;
+    text-align: center;
+}
+
+.alarm > .send-alert span {
+    display: block;
+    text-align: center;
+    max-width: 80%;
+    margin: 30px auto 0;
+    font-size: 1.3em;
+}
+
+.alarm > .send-alert span strong {
+    display: block;
+}
+
+.type {
+    position: relative;
+    width: 500px;
+    margin: 80px auto 0;
+    font-size: 1.5em;
+    cursor: pointer;
+    -webkit-transition: opacity 300ms ease-in-out;
+}
+
+.type .select {
+    background: #eee;
+    padding: 15px;
+    margin: 0 40px 5px;
+    border-radius: 10px;
+    color: #222;
+    font-weight: bold;
+}
+
+.type .select:hover {
+    background: #e83622;
+    color: #FFF;
+}
+
+.type .select:hover span:nth-child(2) {
+    color: #FFF;
+}
+
+.type .select span:nth-child(2) {
+    float: right;
+    font-weight: bold;
+    color: #e83622;
+}
+
+.confirm {
+    position: relative;
+    width: 500px;
+    margin: 80px auto 0;
+    font-size: 1.5em;
+    -webkit-transition: opacity 300ms ease-in-out;
+}
+
+.confirm .text {
+    max-width: 70%;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.confirm .text .twhere,
+.confirm .text .rw,
+.confirm .text .tname {
+    color: #555;
+    text-transform: uppercase;
+}
+
+.confirm .message {
+    padding: 20px;
+    margin: 10px 20px;
+    background: #222;
+    color: #FFF;
+    border-radius: 10px;
+    line-height: 25px;
+}
+
+.confirm .message strong {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.confirm button {
+    display: block;
+    border: 0;
+    padding: 15px;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-transform: uppercase;
+    color: #FFF;
+    background: #e83622;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.update-info {
+    display: block;
+    border: 0;
+    padding: 15px;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-transform: uppercase;
+    color: #FFF;
+    background: #e83622;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.confirm button:first-of-type {
+    margin-top: 30px;
+}
+
+.confirm button i {
+    font-size: 1.2em;
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+    margin-right: 10px;
+}
+
+.confirm button.no {
+    background: #FFF;
+    color: #999;
+    border: 1px solid #999;
+}
+
+.client-options {
+    position: relative;
+    width: 500px;
+    margin: 50px auto 0;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.client-options .go-to {
+    background: #eee;
+    padding: 15px;
+    margin: 0 40px 5px;
+    border-radius: 10px;
+    color: #222;
+    font-weight: bold;
+}
+
+.client-options .go-to:hover {
+    background: #e83622;
+    color: #FFF;
+}
+
+.client-options .go-to:hover span:nth-child(2) {
+    color: #FFF;
+}
+
+.client-options .go-to span:nth-child(2) {
+    float: right;
+    font-weight: bold;
+    color: #e83622;
+}
+
+.hide {
+    height:0px;
+    opacity:0;
+    margin: 0px;
+    font-size: 0px;
+}
