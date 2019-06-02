@@ -79,7 +79,7 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
     // }
   }
 
-  function alertSent() {
+  async function alertSent() {
     // Animate progress bar
     const prog = document.querySelectorAll('.two');
     for (const e of prog) {
@@ -87,12 +87,19 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
     }
 
     // Add location to the location <p>
-    const loc = document.querySelector('p.location');
+    const loc = document.querySelector('#location');
     if (loc !== null && navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
-        loc.innerHTML = '(' + lat + ', ' + lon + ')';
+        fetch('https://api.opencagedata.com/geocode/v1/json?q=' + lat +
+                           '+' + lon +
+                           '&key=55f3c34bb9a3424d96a72154deca11ea&no_annotations=1&language=en')
+        .then((response) => {
+          return response.json();
+        }).then((json) => {
+          loc.innerHTML = json.results[0].formatted;
+        });
       });
     }
 
@@ -113,8 +120,7 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
     for (const t of toggles) {
       t.classList.toggle('hide');
     }
-    ScReportIncident({});
-    notifyMe();
+    ScReportIncident({}).then(notifyMe);
   }
 
   function confirmNotSent() {
@@ -211,7 +217,7 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
         <div className="confirm hide">
             <div className="message">
                 <strong>Emergency Alert</strong>
-                <span>Sudden cardiac arrest at <strong>YOUR LOCATION</strong></span>
+                <span>Sudden cardiac arrest at <strong id="location">YOUR LOCATION</strong></span>
             </div>
 
             <div className="text">
