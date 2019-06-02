@@ -3,10 +3,6 @@ import * as React from 'react';
 import { RouterProps } from 'react-router';
 
 export const DappMap: React.SFC<RouterProps> = (props) => {
-  function getIncidents() {
-    alert('hello');
-  }
-
   function unhidePatient() {
     const pati = document.querySelectorAll('.patient1');
 
@@ -47,7 +43,6 @@ export const DappMap: React.SFC<RouterProps> = (props) => {
           </div>
         </div>
       </div>
-      <textarea onChange={getIncidents}></textarea>
       <div className="center client">
           <h2 className="larger-font">Nearby Emergencies</h2>
           <div className="client-options">
