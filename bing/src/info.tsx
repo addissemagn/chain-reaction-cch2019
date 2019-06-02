@@ -65,6 +65,14 @@ export const DappInfo: React.SFC<RouterProps> = (props) => {
     props.history.push('/');
   }
 
+  function verifyMe() {
+    ScVerify({}).then(toVerified);
+  }
+
+  function toVerified() {
+    alert('This certificate is valid and belongs to the current ONT ID.');
+  }
+
   function toInfo() {
     // props.history.push('/dapp');
     props.history.push('/info');
@@ -84,14 +92,14 @@ export const DappInfo: React.SFC<RouterProps> = (props) => {
         </div>
       </div>
       <textarea onChange={getIncidents}></textarea>
-      <div className="center client">
+      <div className="center client information-box">
             <h3 className="larger-font">Your information </h3>
             <div className="message mydetails">
                 <h3 className = "mydetails"><strong>Name</strong> Addis Semagn </h3>
                 <h3 className = "mydetails"><strong>ONT ID</strong> AGinbPnYG5LinvZeS9gmwAEryw7VdaNPZB </h3>
                 <div className = "credentials">
                     <h3 className = "mydetails"><strong>Certifications</strong> Standard First Aid CPR/AED Level A</h3>
-                    <button className="add-info" onClick={ScVerify}>Verify</button>
+                    <button className="add-info" onClick={verifyMe}>Verify</button>
                 </div>
             </div>
 

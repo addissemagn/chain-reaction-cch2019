@@ -363,3 +363,14 @@ body {
 .credentials h3 {
     /* float: left; */
 }
+
+#myProgress {
+    width: 100%;
+    background-color: grey;
+  }
+  
+  .myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+  }
