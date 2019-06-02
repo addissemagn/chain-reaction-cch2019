@@ -70,13 +70,13 @@ export const DappMap: React.SFC<RouterProps> = (props) => {
   }
 
   return (
-    <div>
+    <div className="emergencies">
       <div className="topnav">
         <a className="logo" href="#home">ChainReact</a>
         <div className="topnav-right">
           <div className="user">
             <div className="everything">
-              <h2 className="toggle" onClick={toClient}>Record emergency</h2>
+              <h2 className="toggle" onClick={toClient}>Report emergency</h2>
             </div>
           </div>
         </div>
@@ -86,16 +86,18 @@ export const DappMap: React.SFC<RouterProps> = (props) => {
           <h2 className="larger-font">Nearby Emergencies</h2>
           <div className="client-options">
               <div id="pat1" className="go-to patient1" onClick={maps}>
-                  <span>Cardiac arrest (500m) </span>
-                  <span>Select to accept</span>
+                  <span>Cardiac arrest | 500m | 0 min ago </span>
+                  <span>Accept</span>
               </div>
           </div>
-          <h3>Your information </h3>
-          <h3>Name: Addis Semagn </h3>
-          <h3> ONT ID: AGinbPnYG5LinvZeS9gmwAEryw7VdaNPZB </h3>
-          <h3> Certifications: Standard First Aid CPR/AED Level A </h3>
-          <button>Add certifications</button>
-          <button onClick={ScVerify}>Verify certifications</button>
+      </div>
+      <div className="details">
+          <h3 className="myinfo">Your information </h3>
+          <h3 className = "mydetails">Name: Addis Semagn </h3>
+          <h3 className = "mydetails">ONT ID: AGinbPnYG5LinvZeS9gmwAEryw7VdaNPZB </h3>
+          <h3 className = "mydetails">Certifications: Standard First Aid CPR/AED Level A </h3>
+          <button className="add-info" onClick={ScVerify}>Verify credentials</button>
+          <button className="add-info">Add credentials</button>
       </div>
     </div>
   );

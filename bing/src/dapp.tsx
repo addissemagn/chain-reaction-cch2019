@@ -205,7 +205,7 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
         <div className="confirm hide">
             <div className="message">
                 <strong>Emergency Alert</strong>
-                <span>Sudden cardiac arrest at <p id="location"></p></span>
+                <span>Sudden cardiac arrest at <strong>YOUR LOCATION</strong></span>
             </div>
 
             <div className="text">

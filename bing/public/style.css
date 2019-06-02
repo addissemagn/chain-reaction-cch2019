@@ -194,11 +194,13 @@ body {
 
 .confirm .message {
     padding: 20px;
-    margin: 10px 20px;
+    width: 350px;
+    /* margin: 10px 20px; */
     background: #222;
     color: #FFF;
     border-radius: 10px;
     line-height: 25px;
+    text-align: center;
 }
 
 .confirm .message strong {
@@ -225,6 +227,20 @@ body {
     border: 0;
     padding: 15px;
     margin: 0 auto 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-transform: uppercase;
+    color: #FFF;
+    background: #e83622;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.add-info {
+    display: block;
+    border: 0;
+    padding: 15px;
+    margin: 0 auto 10px;
     border-radius: 10px;
     width: 300px;
     text-transform: uppercase;
@@ -289,4 +305,30 @@ body {
     opacity:0;
     margin: 0px;
     font-size: 0px;
+}
+
+.myinfo {
+    color: #e83622;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.myinfobtn {
+    display: block;
+    border: 0;
+    padding: 15px;
+    margin: 0 auto 10px;
+    border-radius: 10px;
+    width: 100px;
+    text-transform: uppercase;
+    color: #FFF;
+    background: #e83622;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.mydetails {
+    color: #222;
+    font-size: 1.4em;
+    text-align: center;
 }
