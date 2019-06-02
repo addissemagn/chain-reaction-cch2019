@@ -1,6 +1,6 @@
+OntCversion = '2.0.0'
 from boa.interop.System.Storage import Put, GetContext, Get, Delete
 from boa.interop.System.Runtime import CheckWitness, Notify, Serialize, Deserialize, GetTime, Notify, Log
-from boa.builtins import concat
 from boa.interop.Ontology.Native import Invoke
 
 PERSON_KEY = "PERSON_"
