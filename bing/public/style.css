@@ -290,7 +290,7 @@ body {
     border-radius: 10px;
     color: #222;
     font-weight: bold;
-    width: 380px;
+    width: 90%;
 }
 
 .client-options .go-to:hover {
@@ -368,9 +368,13 @@ body {
     width: 100%;
     background-color: grey;
   }
-  
+
   .myBar {
     width: 1%;
     height: 30px;
     background-color: green;
   }
+
+#goog-map {
+    margin:10px auto;
+}

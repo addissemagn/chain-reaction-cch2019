@@ -74,10 +74,6 @@ export const DappInfo: React.SFC<RouterProps> = (props) => {
     }
   }
 
-  function getIncidents() {
-    alert('hello');
-  }
-
   function unhidePatient() {
     const pati = document.querySelectorAll('.patient1');
 
@@ -118,7 +114,6 @@ export const DappInfo: React.SFC<RouterProps> = (props) => {
           </div>
         </div>
       </div>
-      <textarea onChange={getIncidents}></textarea>
       <div className="center client information-box">
             <h3 className="larger-font">Your information </h3>
             <div className="message mydetails">
