@@ -19,6 +19,10 @@ export const DappMap: React.SFC<RouterProps> = (props) => {
     window.location.replace('https://goo.gl/maps/PZR7meHiELmBY8j98');
   }
 
+  function callPerson() {
+    window.location.replace('http://bit.ly/2Mo8S48');
+  }
+
   function toClient() {
     unhidePatient();
     // props.history.push('/dapp');
@@ -47,9 +51,12 @@ export const DappMap: React.SFC<RouterProps> = (props) => {
       <div className="center client">
           <h2 className="larger-font">Nearby Emergencies</h2>
           <div className="client-options">
-              <div id="pat1" className="go-to patient1" onClick={maps}>
+              <div id="pat1" className="go-to patient1 btn1" onClick={maps}>
                   <span>Cardiac arrest | 500m | 0 min ago </span>
-                  <span>Accept</span>
+                  <span>Go to</span>
+              </div>
+              <div className="go-to btn2">
+                <h2 className="call" onClick={callPerson}>Call</h2>
               </div>
               <iframe id="goog-map"
               width="100%"

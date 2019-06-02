@@ -278,19 +278,31 @@ body {
 .client-options {
     position: relative;
     width: 390px;
-    margin: 50px auto 0;
+    margin: 40px auto 0;
     font-size: 1.5em;
     cursor: pointer;
 }
 
 .client-options .go-to {
-    background: #eee;
     padding: 15px;
     margin: 0 auto;
     border-radius: 10px;
     color: #222;
     font-weight: bold;
-    width: 90%;
+    position:relative;
+    display: inline-block;
+}
+
+.btn1 {
+    background: #eee;
+    width: 300px;
+    float: left;
+}
+
+.btn2 {
+    width: 20px;
+    float: right;
+    background: #e83622;
 }
 
 .client-options .go-to:hover {
@@ -377,4 +389,12 @@ body {
 
 #goog-map {
     margin:10px auto;
+}
+.call {
+color: #FFF;
+font-size: 1em;
+margin: 0px;
+margin-left: -3px;
+padding: 0px;
+text-align: center;
 }
