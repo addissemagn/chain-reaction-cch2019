@@ -149,6 +149,11 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
     props.history.push('/map');
   }
 
+  function toInfo() {
+    // props.history.push('/dapp');
+    props.history.push('/info');
+  }
+
   return (
     <div>
     <div className="topnav">
@@ -156,7 +161,8 @@ export const Dapp: React.SFC<RouterProps> = (props) => {
       <div className="topnav-right">
         <div className="user ">
           <div className="everything">
-            <h2 className="toggle" onClick={toMap}>Nearby Emergencies</h2>
+            <span className="toggle" onClick={toMap}>Nearby Emergencies</span>
+            <span className="toggle" onClick={toInfo}>My Info</span>
           </div>
         </div>
       </div>

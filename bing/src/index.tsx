@@ -5,6 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { Dapp } from './dapp';
 import { DappMap } from './dapp-map';
 import { Home } from './home';
+import { DappInfo } from './info';
 import { SmartContractAlert, SmartContractCertify, SmartContractVerify } from './smartContract';
 
 const App: React.SFC<{}> = () => (
@@ -16,6 +17,7 @@ const App: React.SFC<{}> = () => (
       <Route path="/smart-contract" exact={true} component={SmartContractVerify} />
       <Route path="/smart-contract" exact={true} component={SmartContractAlert} />
       <Route path="/map" exact={true} component={DappMap} />
+      <Route path="/info" exact={true} component={DappInfo} />
     </>
   </BrowserRouter>
 );
